@@ -5,6 +5,7 @@ function getBaseURL(){
     ? "http://localhost:3000"
     : "https://education-backend-production-a297.up.railway.app";
     
+    
 };
 
 const BASE_URL = getBaseURL();
