@@ -1,0 +1,221 @@
+body{
+    height:100vh;
+    background-color: #E4E9F7;
+}
+.nav-item .nav-link i{
+    font-size: 20px;
+}
+
+.main-nav{
+    box-shadow:0 0 5px rgba(0,0,0,0.3);
+   
+}
+
+.nav-link{
+    padding:5px;
+    border-radius:5px;
+}
+
+.nav-link.active{
+    background-color: #0000002d;
+}
+
+.section{
+    display:none;
+}
+
+.section.active{
+    display:block;
+}
+
+.card div .col{
+    text-align:center;
+}
+.card div .col h5{
+    color:#ffffff;
+}
+
+.card div .col p {
+    color: #ffffff;
+    font-size:25px;
+    font-weight:700;
+}
+
+#dashboard .container .table {
+    box-shadow: 0 0 2px rgba(0,0,0,0.4);
+}
+
+
+#dashboard{
+    position: relative;
+    min-height:100%;
+    
+}
+
+#dashboard .container{
+    min-height: 100%;
+    background-color: #E4E9F7;
+
+    
+}
+
+.footer-student{
+    position:fixed;
+    bottom:0;
+    right: 0;
+    width:100%;
+    z-index: 10;
+}
+
+.alert{
+    z-index:999;
+    width:300px;
+    position:fixed;
+    right:0;
+    bottom:15px;
+    
+}
+
+.stage-div{
+    min-height:100px;
+    justify-content:space-around;
+}
+
+
+.stage-div .stage-choose{
+    width:150px;
+}
+
+.stage-div .count{
+    display:block;
+    width:110px;
+    text-align:center;
+    padding:5px;
+    border-radius:5px;
+    color:#ffffff;
+    font-weight:600;
+
+
+}
+
+
+/** style section qr **/
+
+#qr {
+    min-height: 650px;
+}
+
+.qr-content{
+    position:relative;
+}
+
+.qr-content .qr-div{
+    min-width:500px;
+    height:650px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+}
+
+.qr-content .qr-div p{
+    display:block;
+    height:100px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:7px;
+    background-color: #ffffff;
+    padding:60px 30px;
+    border-radius: 10px;
+    box-shadow:5px 5px 5px rgba(0,0,0,0.1);
+}
+
+.qr-content .qr-div button{
+    width:300px;
+    padding:8px;
+    font-weight:600;
+}
+
+.qr-content .qr-div input {
+    width: 300px;
+    padding: 7px;
+    border:1px solid #00000074;
+    color:#20B2AA;
+    border-radius:5px;
+    outline:0;
+}
+
+.qr-content .info-div{
+    width:150px;
+    height:90px;
+    display:flex;
+    justify-content:space-around;
+    flex-direction:column;
+    position:absolute;
+    top:0;
+    right:100px;
+
+}
+
+.qr-content .info-div div{
+    text-align:center;
+    padding:5px;
+    border-radius:5px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.toast-container .no-lec-toast{
+    width:35px;
+    height:50px;
+    overflow:hidden;
+    transition:0.7s ease;
+}
+
+.toast-container .no-lec-toast.active{
+    width: 350px;
+    height: 90px;
+}
+
+
+/** style section students **/
+
+.settings div{
+    display:inline-block;
+    scale:0.9;
+   
+}
+
+.settings div button i{
+    color:#ffffff;
+}
+
+@keyframes deleted{
+    0%{
+        opacity:0.5;
+        transform:translateX(-100px);
+    }
+    100%{
+        opacity: 0.1;
+        transform: translateX(-900px);
+    }
+}
+
+
+/** style section attend **/
+
+#attend {
+    min-height: 100%;
+}
+
+#attend .container #collapseAttend .card-body .attend-head{
+    position:sticky;
+    top:0;
+    padding:10px;
+    border-radius:5px;
+    background-color: #fff;
+    box-shadow:0px 0px 20px rgba(0,0,0,0.1);
+    
+}
