@@ -1,7 +1,9 @@
 function getBaseURL(){
-    // const isLocal = window.location.hostname === "localhost";
+    const isLocal = window.location.hostname === "localhost";
 
-     return "https://education-backend-production-a297.up.railway.app";
+     return isLocal
+    ? "http://localhost:3000"
+    : "https://education-backend-production-a297.up.railway.app";
     
 };
 
