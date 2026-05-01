@@ -1,5 +1,4 @@
 {
-  "root": "frontend",
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/login", "destination": "/index.html" },
