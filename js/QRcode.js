@@ -240,14 +240,12 @@ let err_lecName = document.getElementById('lecName');
             }
         });
 
+        // reset number of scan student
+        document.querySelector('.stage-div .count').innerHTML = "number : 0";
+        document.querySelector('#qr .info-div .number-div').innerHTML = "number : 0";
+
         let NewlectureName = response.data.result.lectureName;
         let lectureId = response.data.result._id;
-
-        let today = new Date(response.data.result.createdAt);
-  
-        let date = today.toLocaleDateString("en-CA", {
-            timeZone: "Africa/Cairo"
-        });
        
 
         let stage_QR_page = response.data.result.stage;
@@ -258,7 +256,6 @@ let err_lecName = document.getElementById('lecName');
 
         localStorage.setItem('stage_QR_page',stage_QR_page);
         localStorage.setItem('lectureName',NewlectureName);
-        localStorage.setItem("dateLecture",date);
 
         lectureTitle.innerHTML =`Attendance Records(${NewlectureName})`;
         stageNameQrPage.classList.remove('d-none');

@@ -7,9 +7,9 @@
     const mySocket = getSocket() ;
 
     
-    // mySocket.off("update_num_student");
-    // mySocket.off("updated_num_present_absent");
-    // mySocket.off("updated_num_session");
+    mySocket.off("update_num_student");
+    mySocket.off("updated_num_present_absent");
+    mySocket.off("updated_num_session");
 
     mySocket.on("update_num_student",(num)=>{
     let update_num_student = document.querySelector('.student-infrom p');
@@ -74,7 +74,6 @@ let closeNav = document.querySelector('.offcanvas-header .btn-close');
 let navContent = document.querySelector('.offcanvas-body .navbar-nav');
 
 let activeSection = localStorage.getItem('id');
-let today = localStorage.getItem('dateLecture');
 
 if(activeSection){
 document.getElementById(activeSection).classList.add('active');
@@ -84,9 +83,6 @@ document.getElementById("dashboard").classList.add('active');
 document.querySelector(`[data-target="dashboard"]`).classList.add('active');
 }
 
-if(today){
-    scanSessions(today);
-}
 
 navContent.addEventListener('click',(e)=>{
     
@@ -385,15 +381,8 @@ function validateNewStudent(id,message){
         let present_student = document.querySelector('.present-infrom p');
         let absence_student = document.querySelector('.absent-infrom p');
 
-        let today =localStorage.getItem('dateLecture');
 
-        if(!today){
-                 present_student.innerHTML = 0;
-                 absence_student.innerHTML = 0;
-                 return;
-        }
-
-        axios.get(`${BASE_URL}/api/filter?today=${today}`,{
+        axios.get(`${BASE_URL}/api/filter`,{
             headers:{
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
@@ -411,13 +400,13 @@ function validateNewStudent(id,message){
         });
     }
 
-    async function scanSessions(date){
+    async function scanSessions(){
         const token = getToken();
         
         let num_of_session = document.querySelector('.scan-infrom p');
         try {
 
-            const response = await axios.get(`${BASE_URL}/api/lecture?today=${date}`,{
+            const response = await axios.get(`${BASE_URL}/api/lecture`,{
             headers:{
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
@@ -425,6 +414,7 @@ function validateNewStudent(id,message){
         })
 
         let data = response.data;
+    
         num_of_session.innerHTML = data.countSession; 
 
 
@@ -437,6 +427,7 @@ function validateNewStudent(id,message){
 
     presentAndAbsent();
     getAllStudent(currentPage);
+    scanSessions()
 
     let paginationContent = document.querySelector('.pag-nav .pagination');
 
