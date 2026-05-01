@@ -7,9 +7,9 @@
     const mySocket = getSocket() ;
 
     
-    // mySocket.off("update_num_student");
-    // mySocket.off("updated_num_present_absent");
-    // mySocket.off("updated_num_session");
+    mySocket.off("update_num_student");
+    mySocket.off("updated_num_present_absent");
+    mySocket.off("updated_num_session");
 
     mySocket.on("update_num_student",(num)=>{
     let update_num_student = document.querySelector('.student-infrom p');
