@@ -209,6 +209,9 @@ stageChoose.addEventListener('change',(e)=>{
 
 
 //---generate new lecture---//
+let startNewLec = document.querySelector('.form-new-lecture .start-newlec-btn');
+let formNewLecture = document.querySelector('.form-new-lecture');
+
 async function newLecture(){
 
 const token = getToken();
@@ -303,12 +306,21 @@ let err_lecName = document.getElementById('lecName');
 
 
 
+    } finally{
+        startNewLec.disabled = false;
+        startNewLec.innerHTML = 'Start';
     }
 }
 
-let formNewLecture = document.querySelector('.form-new-lecture');
 formNewLecture.addEventListener('submit', async (e)=>{
     e.preventDefault();
+
+    startNewLec.disabled = true;
+    startNewLec.innerHTML = `
+    <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+    <span role="status">Starting...</span>
+    
+    `
     await newLecture();
 });
 
